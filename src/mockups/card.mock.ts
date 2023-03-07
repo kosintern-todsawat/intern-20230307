@@ -55,15 +55,17 @@ function getAge(x: number): number {
   return 60
 }
 
+interface IPosition {
+  short: string
+  full: string
+}
+
 interface ICardData {
   cardName: string
   price: number
   power: number
   isActive: boolean
-  position: {
-    short: string
-    full: string
-  }
+  position: IPosition
   club: string
 }
 
@@ -79,17 +81,7 @@ const CardData: ICardData = {
   club: "New York City F.C."
 }
 
-// // _nameList = cardNameList
-// const getNameFromArr = (_nameList: Array<ICardData>) => {
-//   return _nameList[0]
-// }
-
-// // _cData = CardData
-// const getNameByCardData = (_cData: ICardData) => {
-//   return _cData.cardName
-// }
-
-export const CardMockData: ICardData[] = [
+export const CardMockData: Array<ICardData> = [
   {
     cardName: "Tony",
     price: 500,
