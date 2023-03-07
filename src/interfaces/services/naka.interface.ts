@@ -1,45 +1,24 @@
-export interface IPosition {
-  x: string
-  y: string
-}
-
-export interface ILandData {
+export interface IMaterialData {
+  crate_date: Date
   _id: string
   name: string
-  details: string
-  image: string
-  qrcode_image: string
-  NFT_token: string
-  land_id: string
-  position: IPosition
-  type: string
-  logo_approved: boolean
-  NFT_video: string
-  NFT_image: string
-  logo_in_map?: any
-}
-
-export interface IMaterialData {
-  _id: string
-  created_at: Date
-  seller_id?: any
-  item_id: string
-  item_amount: number
-  price: number
-  seller_type: string
-  selling_type: string
-  type: string
+  detail: string
   is_active: boolean
-  order_id?: any
-  land_data: ILandData
+  price: number
+  image: string
+  item_id_smartcontract: number
+  model_id: number
+  min_item: number
+  image_icon: string
+  image_icon_color: string
+  max_item: number
+  current_time: Date
+  item_size: string
+  craft_time: number
+  id: string
 }
 
-export interface IInfo {
-  pages: number
-  limit: number
-  currentCount: number
-  totalCount: number
-}
+export interface IInfo {}
 
 export interface IGetMaterialServ {
   status: boolean
