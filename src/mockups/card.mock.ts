@@ -5,13 +5,15 @@
     ? arrow function generic if you want to use -> https://timmousk.com/blog/typescript-arrow-function-generic
 */
 
+import { Interface } from "readline"
+
 const isActive: boolean = true
 const isUnActive: string = "false"
 const price: number = 1.5
 const thb: number = 30.5
 const cardName: string = "Son Heung-Min"
 const cardNameList: string[] = ["Kevin", "Ronaldo"]
-const randomValue: [string, number, string] = ["Van", 109, "Milner"]
+const randomValue: Array<string | number> = ["Van", 109, "Milner"]
 const date1: string = "2022-11-29T09:21:02.967Z"
 const date2: string = "Tue Nov 29 2022 16:21:02 GMT+0700"
 const date3: Date = new Date()
@@ -53,7 +55,19 @@ function getAge(x: number): number {
   return 60
 }
 
-const CardData = {
+interface ICardData {
+  cardName: string
+  price: number
+  power: number
+  isActive: boolean
+  position: {
+    short: string
+    full: string
+  }
+  club: string
+}
+
+const CardData: ICardData = {
   cardName: "Tony",
   price: 500,
   power: 300,
@@ -65,17 +79,17 @@ const CardData = {
   club: "New York City F.C."
 }
 
-// _nameList = cardNameList
-const getNameFromArr = (_nameList: Array<any>) => {
-  return _nameList[0]
-}
+// // _nameList = cardNameList
+// const getNameFromArr = (_nameList: Array<ICardData>) => {
+//   return _nameList[0]
+// }
 
-// _cData = CardData
-const getNameByCardData = (_cData: any) => {
-  return _cData.cardName
-}
+// // _cData = CardData
+// const getNameByCardData = (_cData: ICardData) => {
+//   return _cData.cardName
+// }
 
-export const CardMockData = [
+export const CardMockData: ICardData[] = [
   {
     cardName: "Tony",
     price: 500,
